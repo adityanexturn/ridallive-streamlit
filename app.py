@@ -1,6 +1,6 @@
 import streamlit as st
 from utils import initialize_session_state, load_css
-from components import render_sidebar, render_welcome_screen, render_chat_interface, process_user_input
+from components import render_sidebar, render_welcome_screen, render_chat_interface, process_user_input, render_navbar
 
 # Page configuration
 st.set_page_config(
@@ -15,6 +15,9 @@ load_css("assets/styles.css")
 
 # Initialize session state
 initialize_session_state()
+
+# Render top navigation bar
+render_navbar()
 
 # Render sidebar
 render_sidebar()
