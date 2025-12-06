@@ -2,12 +2,12 @@ import streamlit as st
 from datetime import datetime
 
 def render_navbar():
-    """Render top navigation bar"""
+    """Render top navigation bar with interactive elements"""
     
-    # Custom CSS for navbar
+    # Custom CSS (same as above)
     st.markdown("""
         <style>
-        /* Navbar container */
+        /* Same CSS as before */
         .navbar {
             display: flex;
             justify-content: space-between;
@@ -18,7 +18,6 @@ def render_navbar():
             margin-bottom: 1rem;
         }
         
-        /* Left side navigation */
         .nav-left {
             display: flex;
             gap: 2rem;
@@ -47,7 +46,6 @@ def render_navbar():
             color: #8b7bef;
         }
         
-        /* Right side icons */
         .nav-right {
             display: flex;
             gap: 1.5rem;
@@ -70,7 +68,6 @@ def render_navbar():
             color: #1a1a1a;
         }
         
-        /* Dropdown indicator */
         .dropdown-arrow {
             font-size: 0.7rem;
             margin-left: 0.3rem;
@@ -81,24 +78,36 @@ def render_navbar():
     # Get current time
     current_time = datetime.now().strftime("%b %d, %I:%M%p").replace("AM", "am").replace("PM", "pm")
     
-    # Navbar HTML
-    navbar_html = f"""
-        <div class="navbar">
-            <div class="nav-left">
-                <span class="nav-item active">Home</span>
-                <span class="nav-item">Smart View</span>
-                <span class="nav-item">Calendar <span class="dropdown-arrow">▼</span></span>
-                <span class="nav-item">Online Tools <span class="dropdown-arrow">▼</span></span>
-                <span class="nav-item">End of Day</span>
-            </div>
-            <div class="nav-right">
-                <span class="nav-time">{current_time}</span>
-                <span class="nav-icon">⚙️</span>
-                <span class="nav-icon">⬇️</span>
-                <span class="nav-icon">💬</span>
-                <span class="nav-icon">🔔</span>
-            </div>
-        </div>
-    """
+    # Create columns for navbar
+    col1, col2 = st.columns([3, 1])
     
-    st.markdown(navbar_html, unsafe_allow_html=True)
+    with col1:
+        # Left navigation items
+        nav_cols = st.columns(5)
+        with nav_cols[0]:
+            st.markdown('<span class="nav-item active">• Home</span>', unsafe_allow_html=True)
+        with nav_cols[1]:
+            st.markdown('<span class="nav-item">Smart View</span>', unsafe_allow_html=True)
+        with nav_cols[2]:
+            st.markdown('<span class="nav-item">Calendar ▼</span>', unsafe_allow_html=True)
+        with nav_cols[3]:
+            st.markdown('<span class="nav-item">Online Tools ▼</span>', unsafe_allow_html=True)
+        with nav_cols[4]:
+            st.markdown('<span class="nav-item">End of Day</span>', unsafe_allow_html=True)
+    
+    with col2:
+        # Right side - time and icons
+        right_cols = st.columns([2, 1, 1, 1, 1])
+        with right_cols[0]:
+            st.markdown(f'<span class="nav-time">{current_time}</span>', unsafe_allow_html=True)
+        with right_cols[1]:
+            st.markdown('<span class="nav-icon">⚙️</span>', unsafe_allow_html=True)
+        with right_cols[2]:
+            st.markdown('<span class="nav-icon">⬇️</span>', unsafe_allow_html=True)
+        with right_cols[3]:
+            st.markdown('<span class="nav-icon">💬</span>', unsafe_allow_html=True)
+        with right_cols[4]:
+            st.markdown('<span class="nav-icon">🔔</span>', unsafe_allow_html=True)
+    
+    # Add horizontal line
+    st.markdown("<hr style='margin: 0; border: 1px solid #e5e7eb;'>", unsafe_allow_html=True)
