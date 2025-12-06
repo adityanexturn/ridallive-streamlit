@@ -11,12 +11,12 @@ st.set_page_config(
 )
 
 # Load custom CSS
-load_css("assets/styles.css")
+load_css()
 
 # Initialize session state
 initialize_session_state()
 
-# Render top navigation bar
+# Render top navigation bar with calendar
 render_navbar()
 
 # Render sidebar
