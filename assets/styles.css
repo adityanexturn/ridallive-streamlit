@@ -1,0 +1,138 @@
+/* Hide Streamlit branding */
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+header {visibility: hidden;}
+
+/* Remove padding from main content */
+.main .block-container {
+    padding-top: 2rem;
+    padding-bottom: 0rem;
+    max-width: 100%;
+}
+
+/* Sidebar styling */
+[data-testid="stSidebar"] {
+    background-color: #f7f7f8;
+    padding-top: 1rem;
+}
+
+[data-testid="stSidebar"] > div:first-child {
+    padding-top: 1rem;
+}
+
+/* Main content centering for welcome screen */
+.welcome-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 50vh;
+    text-align: center;
+}
+
+/* Welcome title */
+.welcome-title {
+    font-size: 3.5rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 2rem;
+    letter-spacing: -0.02em;
+}
+
+/* Chat input container */
+.stChatInput {
+    position: relative;
+}
+
+/* Suggested questions section */
+.suggested-section {
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.suggested-label {
+    color: #6b7280;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+/* Question button styling */
+.question-btn {
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 1.2rem 1.5rem;
+    margin: 0.5rem 0;
+    width: 100%;
+    text-align: left;
+    font-size: 0.95rem;
+    color: #1a1a1a;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.question-btn:hover {
+    background-color: #f9fafb;
+    border-color: #d1d5db;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Sidebar button styling */
+.sidebar-new-btn {
+    background-color: transparent;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #374151;
+}
+
+/* Conversation count styling */
+.conv-count {
+    color: #6b7280;
+    font-size: 0.9rem;
+    margin: 1rem 0;
+}
+
+/* Empty state styling */
+.empty-state {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: #9ca3af;
+}
+
+.empty-state-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #d1d5db;
+}
+
+.empty-state-text {
+    color: #6b7280;
+    margin-bottom: 0.5rem;
+}
+
+.empty-state-action {
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+/* Footer text */
+.footer-text {
+    color: #9ca3af;
+    font-size: 0.85rem;
+    font-style: italic;
+    margin-top: 2rem;
+}
+
+/* Chat message styling */
+[data-testid="stChatMessage"] {
+    background-color: transparent;
+}
+
+/* Remove extra spacing */
+.stButton button {
+    width: 100%;
+}
